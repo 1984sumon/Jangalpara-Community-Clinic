@@ -80,6 +80,7 @@
     }
 
     .menu {
+      list-style: none;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -87,12 +88,17 @@
       padding: 12px 0;
     }
 
+    .menu > li {
+      position: relative;
+    }
+
     .menu a {
       text-decoration: none;
       color: #00558d;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       padding: 10px 14px;
+      display: block;
       transition: background 0.3s;
     }
 
@@ -102,26 +108,28 @@
     }
 
     .submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-  z-index: 999;
-}
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      z-index: 999;
+      min-width: 180px;
+    }
 
-.submenu li a {
-  padding: 10px 20px;
-  white-space: nowrap;
-}
+    .submenu li a {
+      padding: 10px 20px;
+      white-space: nowrap;
+      font-size: 15px;
+    }
 
-.dropdown:hover .submenu {
-  display: block;
-}
+    .dropdown:hover .submenu {
+      display: block;
+    }
 
     .container {
       background-color: #fff;
@@ -149,36 +157,76 @@
 
     <header>
       <div class="slider">
-        <img src="mypic.png" class="active" alt="Slide 1">
-        <img src="cc_meetin.png" alt="Slide 2">
-        <img src="vitamin_A_3.png" alt="Slide 3">
-        <img src="protista_barshiki.png" alt="Slide 4">
-        <img src="schoole_vaccin.png" alt="Slide 5">
-        <img src="monthly_meetin.png" alt="Slide 6">
+        <img src="cc_meeting.png" class="active" alt="Slide 1">
+        <img src="vitamin_A_3.png" alt="Slide 2">
+        <img src="protista_barshiki.png" alt="Slide 3">
+        <img src="schoole_vaccin.png" alt="Slide 4">
+        <img src="monthly_meetin.png" alt="Slide 5">
       </div>
       <div class="header-text">
-        <!-- এখানে যদি শিরোনাম বা টেক্সট দিতে চান -->
+        <h1>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</h1>
+        <p>স্বাস্থ্যসেবার একটি নির্ভরযোগ্য কেন্দ্র</p>
       </div>
     </header>
 
-   <nav>
-  <ul class="menu">
-    <li><a href="#">হোম</a></li>
-    
-    <li class="dropdown">
-      <a href="#">সেবার প্রতিবেদন</a>
-      <ul class="submenu">
-        <li><a href="#">বাৎসরিক প্রতিবেদন</a></li>
-        <li><a href="#">মাসিক প্রতিবেদন</a></li>
-        <li><a href="#">ভ্যাকসিন প্রতিবেদন</a></li>
-      </ul>
-    </li>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">হোম</a></li>
 
-    <li><a href="#">সিসি প্রোফাইল</a></li>
-    <li><a href="#">সিসি কমিটি</a></li>
-    <li><a href="#">যোগাযোগ</a></li>
-  </ul>
-</nav>
+        <li class="dropdown">
+          <a href="#">সেবার প্রতিবেদন</a>
+          <ul class="submenu">
+            <li><a href="#">বাৎসরিক</a></li>
+            <li><a href="#">মাসিক</a></li>
+            <li><a href="#">বিশেষ ক্যাম্প</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">সিসি প্রোফাইল</a>
+          <ul class="submenu">
+            <li><a href="#">ইতিহাস</a></li>
+            <li><a href="#">কর্মরত জনবল</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">সিসি কমিটি</a>
+          <ul class="submenu">
+            <li><a href="#">কমিটি সদস্য</a></li>
+            <li><a href="#">সভাপতি ও সেক্রেটারি</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">সিসি মিটিং</a></li>
+
+        <li class="dropdown">
+          <a href="#">ডাউনলোড</a>
+          <ul class="submenu">
+            <li><a href="#">ফরম</a></li>
+            <li><a href="#">নিয়মাবলী</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">ফটো ও ভিডিও</a>
+          <ul class="submenu">
+            <li><a href="#">ছবি</a></li>
+            <li><a href="#">ভিডিও</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">সফলতা</a>
+          <ul class="submenu">
+            <li><a href="#">উল্লেখযোগ্য</a></li>
+            <li><a href="#">অন্যান্য</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">যোগাযোগ</a></li>
+      </ul>
+    </nav>
 
     <div class="container">
       <h2>স্বাগতম</h2>
@@ -199,7 +247,7 @@
       images[current].classList.remove('active');
       current = (current + 1) % images.length;
       images[current].classList.add('active');
-    }, 3000); // প্রতি ৩ সেকেন্ডে ছবি বদলাবে
+    }, 3000);
   </script>
 
 </body>
