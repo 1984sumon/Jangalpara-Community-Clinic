@@ -101,6 +101,28 @@
       border-radius: 4px;
     }
 
+    .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.submenu li a {
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
     .container {
       background-color: #fff;
       padding: 20px;
@@ -139,19 +161,24 @@
       </div>
     </header>
 
-    <nav>
-      <div class="menu">
-        <a href="#">হোম</a>
-        <a href="#">সেবার প্রতিবেদন</a>
-        <a href="#">সিসি প্রোফাইল</a>
-        <a href="#">সিসি কমিটি</a>
-        <a href="#">সিসি মিটিং</a>
-        <a href="#">ডাউনলোড</a>
-        <a href="#">ফটো ও ভিডিও</a>
-        <a href="#">সফলতা</a>
-        <a href="#">যোগাযোগ</a>
-      </div>
-    </nav>
+   <nav>
+  <ul class="menu">
+    <li><a href="#">হোম</a></li>
+    
+    <li class="dropdown">
+      <a href="#">সেবার প্রতিবেদন</a>
+      <ul class="submenu">
+        <li><a href="#">বাৎসরিক প্রতিবেদন</a></li>
+        <li><a href="#">মাসিক প্রতিবেদন</a></li>
+        <li><a href="#">ভ্যাকসিন প্রতিবেদন</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">সিসি প্রোফাইল</a></li>
+    <li><a href="#">সিসি কমিটি</a></li>
+    <li><a href="#">যোগাযোগ</a></li>
+  </ul>
+</nav>
 
     <div class="container">
       <h2>স্বাগতম</h2>
