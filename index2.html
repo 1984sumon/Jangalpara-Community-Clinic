@@ -124,6 +124,19 @@
       display: block;
     }
 
+    .submenu-item {
+      position: relative;
+    }
+
+    .submenu .submenu {
+      top: 0;
+      left: 100%;
+    }
+
+    .submenu-item:hover .submenu {
+      display: block;
+    }
+
     .container {
       background-color: #fff;
       padding: 20px;
@@ -169,7 +182,14 @@
         <div class="menu-item">
           <a href="#">সেবার প্রতিবেদন</a>
           <div class="submenu">
-            <a href="#">বাৎসরিক প্রতিবেদন</a>
+            <div class="submenu-item">
+              <a href="#">বাৎসরিক প্রতিবেদন</a>
+              <div class="submenu">
+                <a href="#">২০২৩</a>
+                <a href="#">২০২৪</a>
+                <a href="#">২০২৫</a>
+              </div>
+            </div>
             <a href="#">মাসিক প্রতিবেদন</a>
           </div>
         </div>
@@ -185,11 +205,11 @@
 
     <div class="container">
       <h2>স্বাগতম</h2>
-      <p>জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল আয়েবসাইটে স্বাগতম।</p>
+      <p>জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম। এখানে আমাদের সেবাসমূহ, প্রতিবেদন, ক্লিনিকের প্রোফাইল, এবং অন্যান্য তথ্য পাওয়া যাবে।</p>
     </div>
 
     <footer>
-      &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্তু সংরক্ষিত
+      &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
     </footer>
 
   </div>
