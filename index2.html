@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
   <style>
     * {
@@ -11,183 +11,176 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f1f1f1;
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+
+    .main-wrapper {
+      max-width: 83%;
+      margin: 0 auto;
+      padding: 0 15px;
     }
 
     header {
-      background-color: #2d9c5d;
-      color: white;
-      padding: 20px;
+      position: relative;
+      height: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slider img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
+      color: white;
+      text-shadow: 1px 1px 6px black;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .header-text h1 {
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .header-text p {
+      font-size: 20px;
     }
 
     nav {
       background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      border-radius: 6px;
     }
 
-    nav ul {
-      list-style: none;
+    .menu {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 20px;
+      padding: 12px 0;
     }
 
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      display: block;
-      padding: 14px 20px;
+    .menu a {
       text-decoration: none;
-      color: #333;
+      color: #00558d;
       font-weight: bold;
+      font-size: 15px;
+      padding: 10px 14px;
+      transition: background 0.3s;
     }
 
-    nav ul li a:hover {
-      background-color: #eaeaea;
+    .menu a:hover {
+      background-color: #e0e0e0;
+      border-radius: 4px;
     }
 
-    /* Submenu style - নিচে নেমে আসবে */
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      min-width: 220px;
-      z-index: 999;
-    }
-
-    nav ul li:hover > ul {
-      display: block;
-    }
-
-    nav ul li ul li a {
-      padding: 10px 15px;
-      white-space: nowrap;
-    }
-
-    nav ul li ul li a:hover {
-      background-color: #f0f0f0;
-    }
-
-    /* উপsubmenu - নিচে দেখাতে চাইলে */
-    nav ul li ul li ul {
-      display: block; /* সবসময় দেখাবে */
-      position: static;
-      background: #fdfdfd;
-      border: none;
-      padding-left: 15px;
-    }
-
-    .slider-container {
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slider-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 20px;
-      left: 30px;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 10px 20px;
-      font-size: 20px;
-      border-radius: 10px;
-    }
-
-    .content {
+    .container {
+      background-color: #fff;
       padding: 20px;
-      text-align: center;
-    }
-
-    .content h1 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .content p {
-      color: #666;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
     }
 
     footer {
-      background-color: #2d9c5d;
-      color: white;
+      background-color: #ffffff;
+      color: #333;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
       margin-top: 40px;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</h1>
-    <p>বীরকেদার, কাহালু, বগুড়া</p>
-  </header>
+  <div class="main-wrapper">
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#">হোম</a></li>
+    <header>
+      <div class="slider">
+        <img src="mypic2.png" class="active" alt="Slide 1">
+        <img src="cc_meetin.png" alt="Slide 2">
+        <img src="vitamin_A_3.png" alt="Slide 3">
+        <img src="protista_barshiki.png" alt="Slide 4">
+        <img src="schoole_vaccin.png" alt="Slide 5">
+        <img src="monthly_meetin.png" alt="Slide 6">
+      </div>
+      <div class="header-text">
+        <!-- এখানে যদি শিরোনাম বা টেক্সট দিতে চান -->
+      </div>
+    </header>
 
-      <li><a href="#">সেবার প্রতিবেদন</a>
-        <ul>
-          <li><a href="#">বাৎসরিক সেবার প্রতিবেদন</a>
-            <ul>
-              <li><a href="#">২০২৩</a></li>
-              <li><a href="#">২০২৪</a></li>
-              <li><a href="#">২০২৫</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+    <nav>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">সেবার প্রতিবেদন</a>
+        <a href="#">মাসিক সেবার প্র্রতিবেদন</a>
+        <a href="#">সিসি প্রোফাইল</a>
+        <a href="#">সিসি কমিটি</a>
+        <a href="#">সিসি মিটিং</a>
+        <a href="#">ডাউনলোড</a>
+        <a href="#">ফটো ও ভিডিও</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
 
-      <li><a href="#">সিসি প্রোফাইল</a>
-        <ul>
-          <li><a href="#">প্রোফাইল-১</a></li>
-          <li><a href="#">প্রোফাইল-২</a></li>
-        </ul>
-      </li>
+    <div class="container">
+      <h2>স্বাগতম</h2>
+      <p>জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম। এখানে আমাদের সেবাসমূহ, প্রতিবেদন, ক্লিনিকের প্রোফাইল, এবং অন্যান্য তথ্য পাওয়া যাবে।</p>
+    </div>
 
-      <li><a href="#">যোগাযোগ</a></li>
-    </ul>
-  </nav>
+    <footer>
+      &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
+    </footer>
 
-  <div class="slider-container">
-    <img src="mypic2.png" alt="Slide 1">
-    <div class="caption">জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</div>
   </div>
 
-  <div class="content">
-    <h1>স্বাগতম</h1>
-    <p>আমাদের ক্লিনিকে পাবেন উন্নত স্বাস্থ্যসেবা, তথ্যসেবা এবং স্বাস্থ্য সচেতনতামূলক কার্যক্রম।</p>
-  </div>
+  <script>
+    const images = document.querySelectorAll('.slider img');
+    let current = 0;
 
-  <footer>
-    &copy; ২০২৫ - জাঙ্গালপাড়া কমিউনিটি ক্লিনিক
-  </footer>
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000); // প্রতি ৩ সেকেন্ডে ছবি বদলাবে
+  </script>
 
 </body>
 </html>
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
   <style>
     * {
@@ -197,362 +190,169 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f1f1f1;
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+
+    .main-wrapper {
+      max-width: 83%;
+      margin: 0 auto;
+      padding: 0 15px;
     }
 
     header {
-      background-color: #2d9c5d;
-      color: white;
-      padding: 20px;
+      position: relative;
+      height: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slider img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
+      color: white;
+      text-shadow: 1px 1px 6px black;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .header-text h1 {
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .header-text p {
+      font-size: 20px;
     }
 
     nav {
       background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      border-radius: 6px;
     }
 
-    nav ul {
-      list-style: none;
+    .menu {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 20px;
+      padding: 12px 0;
     }
 
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      display: block;
-      padding: 14px 20px;
+    .menu a {
       text-decoration: none;
-      color: #333;
+      color: #00558d;
       font-weight: bold;
+      font-size: 15px;
+      padding: 10px 14px;
+      transition: background 0.3s;
     }
 
-    nav ul li a:hover {
-      background-color: #eaeaea;
+    .menu a:hover {
+      background-color: #e0e0e0;
+      border-radius: 4px;
     }
 
-    /* Submenu style - নিচে নেমে আসবে */
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      min-width: 220px;
-      z-index: 999;
-    }
-
-    nav ul li:hover > ul {
-      display: block;
-    }
-
-    nav ul li ul li a {
-      padding: 10px 15px;
-      white-space: nowrap;
-    }
-
-    nav ul li ul li a:hover {
-      background-color: #f0f0f0;
-    }
-
-    /* উপsubmenu - নিচে দেখাতে চাইলে */
-    nav ul li ul li ul {
-      display: block; /* সবসময় দেখাবে */
-      position: static;
-      background: #fdfdfd;
-      border: none;
-      padding-left: 15px;
-    }
-
-    .slider-container {
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slider-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 20px;
-      left: 30px;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 10px 20px;
-      font-size: 20px;
-      border-radius: 10px;
-    }
-
-    .content {
+    .container {
+      background-color: #fff;
       padding: 20px;
-      text-align: center;
-    }
-
-    .content h1 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .content p {
-      color: #666;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
     }
 
     footer {
-      background-color: #2d9c5d;
-      color: white;
+      background-color: #ffffff;
+      color: #333;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
       margin-top: 40px;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</h1>
-    <p>বীরকেদার, কাহালু, বগুড়া</p>
-  </header>
+  <div class="main-wrapper">
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#">হোম</a></li>
+    <header>
+      <div class="slider">
+        <img src="mypic2.png" class="active" alt="Slide 1">
+        <img src="cc_meetin.png" alt="Slide 2">
+        <img src="vitamin_A_3.png" alt="Slide 3">
+        <img src="protista_barshiki.png" alt="Slide 4">
+        <img src="schoole_vaccin.png" alt="Slide 5">
+        <img src="monthly_meetin.png" alt="Slide 6">
+      </div>
+      <div class="header-text">
+        <!-- এখানে যদি শিরোনাম বা টেক্সট দিতে চান -->
+      </div>
+    </header>
 
-      <li><a href="#">সেবার প্রতিবেদন</a>
-        <ul>
-          <li><a href="#">বাৎসরিক সেবার প্রতিবেদন</a>
-            <ul>
-              <li><a href="#">২০২৩</a></li>
-              <li><a href="#">২০২৪</a></li>
-              <li><a href="#">২০২৫</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+    <nav>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">সেবার প্রতিবেদন</a>
+        <a href="#">মাসিক সেবার প্র্রতিবেদন</a>
+        <a href="#">সিসি প্রোফাইল</a>
+        <a href="#">সিসি কমিটি</a>
+        <a href="#">সিসি মিটিং</a>
+        <a href="#">ডাউনলোড</a>
+        <a href="#">ফটো ও ভিডিও</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
 
-      <li><a href="#">সিসি প্রোফাইল</a>
-        <ul>
-          <li><a href="#">প্রোফাইল-১</a></li>
-          <li><a href="#">প্রোফাইল-২</a></li>
-        </ul>
-      </li>
+    <div class="container">
+      <h2>স্বাগতম</h2>
+      <p>জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম। এখানে আমাদের সেবাসমূহ, প্রতিবেদন, ক্লিনিকের প্রোফাইল, এবং অন্যান্য তথ্য পাওয়া যাবে।</p>
+    </div>
 
-      <li><a href="#">যোগাযোগ</a></li>
-    </ul>
-  </nav>
+    <footer>
+      &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
+    </footer>
 
-  <div class="slider-container">
-    <img src="mypic2.png" alt="Slide 1">
-    <div class="caption">জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</div>
   </div>
 
-  <div class="content">
-    <h1>স্বাগতম</h1>
-    <p>আমাদের ক্লিনিকে পাবেন উন্নত স্বাস্থ্যসেবা, তথ্যসেবা এবং স্বাস্থ্য সচেতনতামূলক কার্যক্রম।</p>
-  </div>
+  <script>
+    const images = document.querySelectorAll('.slider img');
+    let current = 0;
 
-  <footer>
-    &copy; ২০২৫ - জাঙ্গালপাড়া কমিউনিটি ক্লিনিক
-  </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background-color: #2d9c5d;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      display: block;
-      padding: 14px 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      background-color: #eaeaea;
-    }
-
-    /* Submenu style - নিচে নেমে আসবে */
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      min-width: 220px;
-      z-index: 999;
-    }
-
-    nav ul li:hover > ul {
-      display: block;
-    }
-
-    nav ul li ul li a {
-      padding: 10px 15px;
-      white-space: nowrap;
-    }
-
-    nav ul li ul li a:hover {
-      background-color: #f0f0f0;
-    }
-
-    /* উপsubmenu - নিচে দেখাতে চাইলে */
-    nav ul li ul li ul {
-      display: block; /* সবসময় দেখাবে */
-      position: static;
-      background: #fdfdfd;
-      border: none;
-      padding-left: 15px;
-    }
-
-    .slider-container {
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slider-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 20px;
-      left: 30px;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 10px 20px;
-      font-size: 20px;
-      border-radius: 10px;
-    }
-
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .content h1 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .content p {
-      color: #666;
-    }
-
-    footer {
-      background-color: #2d9c5d;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</h1>
-    <p>বীরকেদার, কাহালু, বগুড়া</p>
-  </header>
-
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#">হোম</a></li>
-
-      <li><a href="#">সেবার প্রতিবেদন</a>
-        <ul>
-          <li><a href="#">বাৎসরিক সেবার প্রতিবেদন</a>
-            <ul>
-              <li><a href="#">২০২৩</a></li>
-              <li><a href="#">২০২৪</a></li>
-              <li><a href="#">২০২৫</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-
-      <li><a href="#">সিসি প্রোফাইল</a>
-        <ul>
-          <li><a href="#">প্রোফাইল-১</a></li>
-          <li><a href="#">প্রোফাইল-২</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">যোগাযোগ</a></li>
-    </ul>
-  </nav>
-
-  <div class="slider-container">
-    <img src="mypic2.png" alt="Slide 1">
-    <div class="caption">জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</div>
-  </div>
-
-  <div class="content">
-    <h1>স্বাগতম</h1>
-    <p>আমাদের ক্লিনিকে পাবেন উন্নত স্বাস্থ্যসেবা, তথ্যসেবা এবং স্বাস্থ্য সচেতনতামূলক কার্যক্রম।</p>
-  </div>
-
-  <footer>
-    &copy; ২০২৫ - জাঙ্গালপাড়া কমিউনিটি ক্লিনিক
-  </footer>
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000); // প্রতি ৩ সেকেন্ডে ছবি বদলাবে
+  </script>
 
 </body>
 </html>
