@@ -3,7 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
-  <style>
+  <style> 
+    /* মারকিউর জন্য স্টাইল */
+    #marquee-container {
+      width: 100%;
+      background-color: #f2f2f2; /* হালকা ব্যাকগ্রাউন্ড চাইলে */
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      border-bottom: 2px solid #009688;
+      padding: 8px 0;
+      font-family: "Siyam Rupali", "SolaimanLipi", Arial, sans-serif;
+    }
+
+    #marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00796b;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Recent Post বাম পাশে */
+    #recent-post-label {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #00558d;
+      color: white;
+      padding: 10px 15px;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: "Helvetica", "Arial", sans-serif;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      user-select: none;
+      cursor: default;
+    }
+
+    /* আপনার আগের কোড এখানে */
     * {
       margin: 0;
       padding: 0;
@@ -176,6 +227,14 @@
   </style>
 </head>
 <body>
+
+  <!-- Recent Post ডান পাশে -->
+  <div id="recent-post-label">Recent Post</div>
+
+  <!-- মারকিউর বার -->
+  <div id="marquee-container">
+    <div id="marquee-text">জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম</div>
+  </div>
 
   <div class="main-wrapper">
 
