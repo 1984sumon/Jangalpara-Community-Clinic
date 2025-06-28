@@ -21,17 +21,16 @@
       padding: 0 15px;
     }
 
-    /* 🔍 সার্চ বক্স এরিয়া */
-    .top-bar {
-      background-color: #ffffff;
-      padding: 15px;
+    /* 🔍 সার্চ বক্স */
+    .top-search-bar {
+      background: purple;
+      padding: 10px;
       text-align: right;
-      margin-top: 15px;
       border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
     }
 
-    .top-bar input[type="text"] {
+    .top-search-bar input[type="text"] {
       padding: 8px 12px;
       width: 220px;
       border: 1px solid #ccc;
@@ -39,13 +38,18 @@
       font-size: 14px;
     }
 
-    .top-bar button {
-      padding: 8px 12px;
+    .top-search-bar input[type="submit"] {
+      padding: 8px 14px;
       background-color: #00558d;
       color: white;
       border: none;
       border-radius: 4px;
+      margin-left: 5px;
       cursor: pointer;
+    }
+
+    .top-search-bar input[type="submit"]:hover {
+      background-color: #003f6f;
     }
 
     header {
@@ -53,7 +57,7 @@
       height: 350px;
       border-radius: 8px;
       overflow: hidden;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .slider {
@@ -175,14 +179,15 @@
 
   <div class="main-wrapper">
 
-    <!-- 🔍 উপরের ফাঁকা জায়গায় সার্চ বার -->
-    <div class="top-bar">
-      <form onsubmit="event.preventDefault(); alert('আপনি অনুসন্ধান করেছেন: ' + this.search.value);">
-        <input type="text" name="search" placeholder="অনুসন্ধান করুন...">
-        <button type="submit">Search</button>
+    <!-- ✅ সার্চ বক্স উপরে -->
+    <div class="top-search-bar">
+      <form action="#" method="get">
+        <input type="text" placeholder="অনুসন্ধান করুন...">
+        <input type="submit" value="Search">
       </form>
     </div>
 
+    <!-- ✅ স্লাইডার -->
     <header>
       <div class="slider">
         <img src="mypic2.png" class="active" alt="Slide 1">
@@ -194,6 +199,7 @@
       </div>
     </header>
 
+    <!-- ✅ মেনু বার -->
     <nav>
       <ul class="menu">
         <li><a href="#">হোম</a></li>
@@ -215,6 +221,7 @@
             </li>
           </ul>
         </li>
+
         <li><a href="#">সিসি প্রোফাইল</a>
           <ul class="submenu">
             <li><a href="#">প্রোফাইল</a></li>
@@ -223,35 +230,40 @@
             <li><a href="#">সিসি লোকেশন</a></li>
           </ul>
         </li>
+
         <li><a href="#">সিসি কমিটি</a>
           <ul class="submenu">
             <li><a href="#">মূল কমিটি</a></li>
             <li><a href="#">পৃষ্ঠপোষক কমিটি</a></li>
           </ul>
         </li>
+
         <li><a href="#">সিসি মিটিং</a></li>
         <li><a href="#">ডাউনলোড</a></li>
         <li><a href="#">ফটো ও ভিডিও</a>
           <ul class="submenu">
-            <li><a href="#">ফটো গ্যালারী</a></li>
-            <li><a href="#">ভিডিও</a></li>
+            <li><a href="#">সিসির ফটো গ্যালারী</a></li>
+            <li><a href="#">সিসির ভিডিও</a></li>
           </ul>
         </li>
         <li><a href="#">যোগাযোগ</a></li>
       </ul>
     </nav>
 
+    <!-- ✅ কনটেন্ট -->
     <div class="container">
       <h2>স্বাগতম</h2>
       <p>জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম। এখানে আমাদের সেবাসমূহ, প্রতিবেদন, ক্লিনিকের প্রোফাইল, এবং অন্যান্য তথ্য পাওয়া যাবে।</p>
     </div>
 
+    <!-- ✅ ফুটার -->
     <footer>
       &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
     </footer>
 
   </div>
 
+  <!-- ✅ স্লাইডার JS -->
   <script>
     const images = document.querySelectorAll('.slider img');
     let current = 0;
