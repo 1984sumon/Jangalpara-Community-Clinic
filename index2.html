@@ -91,7 +91,7 @@
       text-decoration: none;
       color: #00558d;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 20px;
       padding: 10px 14px;
       transition: background 0.3s;
     }
@@ -127,7 +127,7 @@
 
     <header>
       <div class="slider">
-        <img src="mypic2.png" class="active" alt="Slide 1">
+        <img src="mypic.png" class="active" alt="Slide 1">
         <img src="cc_meetin.png" alt="Slide 2">
         <img src="vitamin_A_3.png" alt="Slide 3">
         <img src="protista_barshiki.png" alt="Slide 4">
@@ -161,5 +161,19 @@
     <footer>
       &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
     </footer>
+
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.slider img');
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000); // প্রতি ৩ সেকেন্ডে ছবি বদলাবে
+  </script>
+
 </body>
 </html>
