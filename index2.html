@@ -28,6 +28,58 @@
       overflow: hidden;
       margin-top: 20px;
     }
+      nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: #eaeaea;
+    }
+
+    /* সাবমেনু */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      min-width: 180px;
+      z-index: 999;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 15px;
+      white-space: nowrap;
+    }
+
+    nav ul li ul li a:hover {
+      background-color: #f0f0f0;
+    }
 
     .slider {
       width: 100%;
