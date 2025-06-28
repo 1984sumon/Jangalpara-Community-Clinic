@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
-  <style> 
-    /* মারকিউর জন্য স্টাইল */
+  <style>
+    /* ✅ মারকিউ স্টাইল */
     #marquee-container {
       width: 100%;
-      background-color: #f2f2f2; /* হালকা ব্যাকগ্রাউন্ড চাইলে */
+      background-color: #f2f2f2;
       overflow: hidden;
       white-space: nowrap;
-      box-sizing: border-box;
       border-bottom: 2px solid #009688;
       padding: 8px 0;
       font-family: "Siyam Rupali", "SolaimanLipi", Arial, sans-serif;
@@ -26,15 +25,11 @@
     }
 
     @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
     }
 
-    /* Recent Post বাম পাশে */
+    /* ✅ সাম্প্রতিক পোস্ট ডান পাশে */
     #recent-post-label {
       position: fixed;
       top: 50%;
@@ -46,15 +41,14 @@
       font-weight: bold;
       font-size: 18px;
       font-family: "Helvetica", "Arial", sans-serif;
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
       z-index: 1000;
       user-select: none;
       cursor: default;
     }
 
-    /* আপনার আগের কোড এখানে */
     * {
       margin: 0;
       padding: 0;
@@ -67,18 +61,16 @@
     }
 
     .main-wrapper {
-      max-width: 83%;
+      max-width: 80%;
       margin: 0 auto;
-      padding: 0 15px;
+      padding: 0 10px;
     }
 
-    /* 🔍 সার্চ বক্স */
     .top-search-bar {
       background: purple;
       padding: 10px;
       text-align: right;
       border-radius: 6px;
-      margin-top: 20px;
     }
 
     .top-search-bar input[type="text"] {
@@ -108,7 +100,6 @@
       height: 350px;
       border-radius: 8px;
       overflow: hidden;
-      margin-top: 10px;
     }
 
     .slider {
@@ -136,7 +127,6 @@
     nav {
       background-color: #ffffff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-top: 20px;
       border-radius: 6px;
     }
 
@@ -209,7 +199,7 @@
     .container {
       background-color: #fff;
       padding: 20px;
-      margin-top: 30px;
+      margin-top: 0;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 6px;
     }
@@ -221,24 +211,24 @@
       padding: 20px;
       font-size: 14px;
       border-top: 1px solid #ddd;
-      margin-top: 40px;
+      margin-top: 10px;
       border-radius: 6px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Recent Post ডান পাশে -->
-  <div id="recent-post-label">Recent Post</div>
+  <!-- ✅ সাম্প্রতিক পোস্ট ডান পাশে -->
+  <div id="recent-post-label">সাম্প্রতিক পোস্ট</div>
 
-  <!-- মারকিউর বার -->
+  <!-- ✅ মারকিউ -->
   <div id="marquee-container">
     <div id="marquee-text">জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম</div>
   </div>
 
   <div class="main-wrapper">
 
-    <!-- ✅ সার্চ বক্স উপরে -->
+    <!-- ✅ সার্চ বক্স -->
     <div class="top-search-bar">
       <form action="#" method="get">
         <input type="text" placeholder="অনুসন্ধান করুন...">
@@ -280,7 +270,6 @@
             </li>
           </ul>
         </li>
-
         <li><a href="#">সিসি প্রোফাইল</a>
           <ul class="submenu">
             <li><a href="#">প্রোফাইল</a></li>
@@ -289,14 +278,12 @@
             <li><a href="#">সিসি লোকেশন</a></li>
           </ul>
         </li>
-
         <li><a href="#">সিসি কমিটি</a>
           <ul class="submenu">
             <li><a href="#">মূল কমিটি</a></li>
             <li><a href="#">পৃষ্ঠপোষক কমিটি</a></li>
           </ul>
         </li>
-
         <li><a href="#">সিসি মিটিং</a></li>
         <li><a href="#">ডাউনলোড</a></li>
         <li><a href="#">ফটো ও ভিডিও</a>
@@ -332,6 +319,5 @@
       images[current].classList.add('active');
     }, 3000);
   </script>
-
 </body>
 </html>
