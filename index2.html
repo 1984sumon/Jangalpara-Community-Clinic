@@ -21,6 +21,33 @@
       padding: 0 15px;
     }
 
+    /* 🔍 সার্চ বক্স এরিয়া */
+    .top-bar {
+      background-color: #ffffff;
+      padding: 15px;
+      text-align: right;
+      margin-top: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .top-bar input[type="text"] {
+      padding: 8px 12px;
+      width: 220px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .top-bar button {
+      padding: 8px 12px;
+      background-color: #00558d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
     header {
       position: relative;
       height: 350px;
@@ -49,18 +76,6 @@
     .slider img.active {
       opacity: 1;
       z-index: 1;
-    }
-
-    .header-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      text-shadow: 1px 1px 6px black;
-      z-index: 2;
-      padding: 0 20px;
     }
 
     nav {
@@ -160,6 +175,14 @@
 
   <div class="main-wrapper">
 
+    <!-- 🔍 উপরের ফাঁকা জায়গায় সার্চ বার -->
+    <div class="top-bar">
+      <form onsubmit="event.preventDefault(); alert('আপনি অনুসন্ধান করেছেন: ' + this.search.value);">
+        <input type="text" name="search" placeholder="অনুসন্ধান করুন...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
     <header>
       <div class="slider">
         <img src="mypic2.png" class="active" alt="Slide 1">
@@ -172,7 +195,7 @@
     </header>
 
     <nav>
-     <ul class="menu">
+      <ul class="menu">
         <li><a href="#">হোম</a></li>
         <li><a href="#">সেবার প্রতিবেদন</a>
           <ul class="submenu">
@@ -186,34 +209,33 @@
                 <li><a href="#">জানুয়ারি/২৫</a></li>
                 <li><a href="#">ফেব্রুয়ারি/২৫</a></li>
                 <li><a href="#">মার্চ/২৫</a></li>
-		<li><a href="#">এপ্রিল/২৫</a></li>
-		<li><a href="#">মে/২৫</a></li>
+                <li><a href="#">এপ্রিল/২৫</a></li>
+                <li><a href="#">মে/২৫</a></li>
               </ul>
             </li>
           </ul>
         </li>
-
         <li><a href="#">সিসি প্রোফাইল</a>
-		<ul class="submenu">
-		<li><a href="#">প্রোফাইল</a></li>
-		<li><a href="#">সিসির ছবি</a></li>
-		<li><a href="#">সিটিজেন চার্টার</a></li>
-		<li><a href="#">সিসি লোকেশন</a></li>
-		</ul>
+          <ul class="submenu">
+            <li><a href="#">প্রোফাইল</a></li>
+            <li><a href="#">সিসির ছবি</a></li>
+            <li><a href="#">সিটিজেন চার্টার</a></li>
+            <li><a href="#">সিসি লোকেশন</a></li>
+          </ul>
         </li>
         <li><a href="#">সিসি কমিটি</a>
-		<ul class="submenu">
-		<li><a href="#">জাঙ্গালপাড়া সিসির মূল কমিটি</a></li>
-		<li><a href="#">সিসির পৃষ্ঠপোষক কমিটি</a></li>
-		</ul>
+          <ul class="submenu">
+            <li><a href="#">মূল কমিটি</a></li>
+            <li><a href="#">পৃষ্ঠপোষক কমিটি</a></li>
+          </ul>
         </li>
         <li><a href="#">সিসি মিটিং</a></li>
         <li><a href="#">ডাউনলোড</a></li>
         <li><a href="#">ফটো ও ভিডিও</a>
-		<ul class="submenu">
-		<li><a href="#">সিসির ফটো গ্যালারী</a></li>
-		<li><a href="#">সিসির ভিডিও</a></li>
-		</ul>
+          <ul class="submenu">
+            <li><a href="#">ফটো গ্যালারী</a></li>
+            <li><a href="#">ভিডিও</a></li>
+          </ul>
         </li>
         <li><a href="#">যোগাযোগ</a></li>
       </ul>
