@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <title>স্লাইডার ছবি ঠিকভাবে বসানো</title>
+  <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
   <style>
     * {
       margin: 0;
@@ -12,8 +12,47 @@
 
     body {
       font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
     }
 
+    /* হেডার */
+    header {
+      background-color: #2d9c5d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* মেনুবার */
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: #eaeaea;
+    }
+
+    /* স্লাইডার */
     .slider-container {
       width: 100%;
       height: 400px;
@@ -24,8 +63,8 @@
     .slider-container img {
       width: 100%;
       height: 100%;
-      object-fit: cover;          /* ছবিকে container অনুযায়ী ফিট করে */
-      object-position: center top; /* মাথা যেন না কেটে যায় */
+      object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
@@ -33,20 +72,78 @@
       position: absolute;
       bottom: 20px;
       left: 30px;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       color: white;
       padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 18px;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+
+    /* কনটেন্ট */
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .content p {
+      color: #666;
+    }
+
+    /* ফুটার */
+    footer {
+      background-color: #2d9c5d;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
+  <!-- হেডার -->
+  <header>
+    <h1>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</h1>
+    <p>বীরকেদার, কাহালু, বগুড়া</p>
+  </header>
+
+  <!-- মেনু -->
+  <nav>
+    <ul>
+      <li><a href="#">হোম</a></li>
+      <li><a href="#">সেবার প্রতিবেদন</a></li>
+      <li><a href="#">সিসি প্রোফাইল</a></li>
+      <li><a href="#">সিসি কমিটি</a></li>
+      <li><a href="#">সিসি মিটিং</a></li>
+      <li><a href="#">ডাউনলোড</a></li>
+      <li><a href="#">ফটো ও ভিডিও</a></li>
+      <li><a href="#">ওয়েব পেইজ</a></li>
+      <li><a href="#">সফলতা</a></li>
+      <li><a href="#">যোগাযোগ</a></li>
+    </ul>
+  </nav>
+
+  <!-- স্লাইডার -->
   <div class="slider-container">
     <img src="mypic2.png" alt="Slide 1">
     <div class="caption">জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</div>
   </div>
+
+  <!-- কনটেন্ট -->
+  <div class="content">
+    <h1>স্বাগতম</h1>
+    <p>আমাদের ক্লিনিকে পাবেন উন্নত স্বাস্থ্যসেবা, তথ্যসেবা এবং স্বাস্থ্য সচেতনতামূলক কার্যক্রম।</p>
+  </div>
+
+  <!-- ফুটার -->
+  <footer>
+    &copy; ২০২৫ - জাঙ্গালপাড়া কমিউনিটি ক্লিনিক
+  </footer>
 
 </body>
 </html>
