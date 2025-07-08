@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>জানুয়ারী/২৫</title>
+  <style>
+    body {
+      font-family: 'Siyam Rupali', sans-serif;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 12px;
+      text-align: center;
+      font-size: 16px;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    caption {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0a5275;
+      font-weight: bold;
+    }
+    .row1 { background-color: #e6f2ff; }
+    .row2 { background-color: #f2f9ff; }
+    .row3 { background-color: #e8f7fa; }
+    .row4 { background-color: #f4fcfd; }
+    .total-cell {
+      background-color: #ffe6e6;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <caption>কমিউনিটি বেইসড হেলথ কেয়ার (সিবিএইচসি)<br>সাধারণ রোগী ও কিশোর-কিশোরী সেবাদানের মাসিক প্রতিবেদন</caption>
+    <tr>
+      <th>রোগী (Patient)</th>
+      <th>৫-১৪ বছর<br>(5-14yrs)</th>
+      <th>১৫-২৪ বছর<br>(15-24yrs)</th>
+      <th>২৫-৪৯ বছর<br>(25-49yrs)</th>
+      <th>৫০+ বছর<br>(50+yrs)</th>
+      <th>মোট সংখ্যা<br>(Total)</th>
+    </tr>
+    <tr class="row1">
+      <td><strong>পুরুষ (Male)</strong></td>
+      <td>38</td>
+      <td>32</td>
+      <td>90</td>
+      <td>112</td>
+      <td rowspan="2" class="total-cell">1001</td> <!-- ✅ rowspan -->
+    </tr>
+    <tr class="row2">
+      <td><strong>মহিলা (Female)</strong></td>
+      <td>33</td>
+      <td>73</td>
+      <td>394</td>
+      <td>229</td>
+      <!-- এখানে <td> নাই, কারণ আগের রো তে rowspan="2" -->
+    </tr>
+  </table>
+
+  <table>
+    <caption>রেফারকৃত রোগী (Referred)</caption>
+    <tr>
+      <th>রোগী (Patient)</th>
+      <th>৫-১৪ বছর<br>(5-14yrs)</th>
+      <th>১৫-২৪ বছর<br>(15-24yrs)</th>
+      <th>২৫-৪৯ বছর<br>(25-49yrs)</th>
+      <th>৫০+ বছর<br>(50+yrs)</th>
+      <th>উচ্চরক্তচাপ<br>(Hypertension)</th>
+      <th>ডায়াবেটিক<br>(Diabetic)</th>
+      <th>মোট সংখ্যা<br>(Total)</th>
+    </tr>
+    <tr class="row3">
+      <td><strong>পুরুষ (Male)</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>2</td>
+      <td></td>
+      <td rowspan="2" class="total-cell">9</td> <!-- ✅ rowspan -->
+    </tr>
+    <tr class="row4">
+      <td><strong>মহিলা (Female)</strong></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td></td>
+      <td>5</td>
+      <td></td>
+      <!-- এখানে <td> নাই কারণ উপরেই rowspan="2" -->
+    </tr>
+  </table>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>শিশু স্বাস্থ্য সেবাদানের মাসিক প্রতিবেদন</title>
+  <style>
+    body {
+      font-family: 'Siyam Rupali', sans-serif;
+      background: #f5f8fa;
+      padding: 30px;
+    }
+    .table-container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1000px;
+    }
+    caption {
+      background: linear-gradient(to right, #0d6efd, #00b4d8);
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      font-weight: bold;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #e3f2fd;
+      color: #0a4275;
+    }
+    tr:nth-child(even) {
+      background-color: #f9fcff;
+    }
+    tr:hover {
+      background-color: #eef8ff;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+<!-- মোট রোগীর সংখ্যা -->
+<div class="table-container">
+  <table>
+    <caption>নবজাতক ও শিশু স্বাস্থ্য সেবাদানের মাসিক প্রতিবেদন<br>মোট রোগীর সংখ্যা</caption>
+    <tr>
+      <th>লিঙ্গ</th>
+      <th>০-২৮ দিন</th>
+      <th>২৯ দিন-২ মাস</th>
+      <th>২ মাস-৬ মাস</th>
+      <th>৬ মাস-১ বছর</th>
+      <th>১-২ বছর</th>
+      <th>২-৫ বছর</th>
+      <th>মাসিক সর্বমোট</th>
+    </tr>
+    <tr>
+      <td>ছেলে</td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>6</td>
+      <td>15</td>
+      <td>27</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>মেয়ে</td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>4</td>
+      <td>8</td>
+      <td>28</td>
+      <td>42</td>
+    </tr>
+  </table>
+</div>
+
+<!-- আইএমসিআই -->
+<div class="table-container">
+  <table>
+    <caption>আইএমসিআই</caption>
+    <tr>
+      <th>রোগের ধরন</th>
+      <th>০–২৮ দিন</th>
+      <th>২৯ দিন–২ মাস</th>
+      <th>২ মাস–৬ মাস</th>
+      <th>৬ মাস–১ বছর</th>
+      <th>১–২ বছর</th>
+      <th>২–৫ বছর</th>
+      <th>সর্বমোট</th>
+    </tr>
+    <tr><td>খুব মারাত্মক রোগ</td><td colspan="7"></td></tr>
+    <tr><td>নিউমোনিয়া</td><td colspan="7"></td></tr>
+    <tr><td>নিউমনিয়া নয়- সর্দি-কাশি</td><td></td><td></td><td>2</td><td>10</td><td>17</td><td>32</td><td>61</td></tr>
+    <tr style="background-color: #b30000; color: white;">
+      <td>জ্বর-ম্যালেরিয়া</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>জ্বর-ম্যালেরিয়া নয়</td><td></td><td></td><td>2</td><td>3</td><td>14</td><td>33</td><td>52</td></tr>
+    <tr><td>ডায়রিয়া ও আমাশয়</td><td></td><td></td><td></td><td>1</td><td>2</td><td>9</td><td>12</td></tr>
+    <tr><td>কানের সমস্যা</td><td colspan="7"></td></tr>
+    <tr><td>হাম</td><td colspan="7"></td></tr>
+    <tr><td>পানিতে ডোবা</td><td colspan="7"></td></tr>
+    <tr><td>আঘাত (Child injury)</td><td colspan="5"></td><td>1</td><td>1</td></tr>
+    <tr><td>অন্যান্য</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td></tr>
+  </table>
+</div>
+
+<!-- পুষ্টি -->
+<div class="table-container">
+  <table>
+    <caption>পুষ্টি</caption>
+    <tr>
+      <th></th>
+      <th>২–৬ মাস</th>
+      <th>৬মাস–১ বছর</th>
+      <th>১–২ বছর</th>
+      <th>২–৫ বছর</th>
+      <th>সর্বমোট সংখ্যা</th>
+    </tr>
+    <tr>
+      <td>গত ২৪ ঘন্টায় শুধুমাত্র মায়ের দুধ খাওয়ানো হয়েছে</td>
+      <td>4</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>কম জন্ম ওজন (LBW)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>কৃশকায় (Low WHZ) &lt;-2SD</td>
+      <td></td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>খর্বকায় (Low HAZ) &lt;-2SD</td>
+      <td></td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>বয়সের তুলনায় কম ওজন (WAZ)</td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>বয়সের তুলনায় কম ওজন (Low WAZ)&lt;-3SD</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>বাড়তি খাবার/পরিপূরক খাবার দেয়া হচ্ছে</td>
+      <td></td>
+      <td>10</td>
+      <td>23</td>
+      <td></td>
+      <td>33</td>
+    </tr>
+  </table>
+</div>
+
+<!-- রেফারকৃত রোগীর সংখ্যা -->
+<div class="table-container">
+  <table>
+    <caption>রেফারকৃত রোগীর সংখ্যা</caption>
+    <tr>
+      <th>লিঙ্গ</th>
+      <th>রেফার সংখ্যা</th>
+    </tr>
+    <tr><td>ছেলে</td><td></td></tr>
+    <tr><td>মেয়ে</td><td></td></tr>
+  </table>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>মাতৃস্বাস্থ্য ও পরিবার পরিকল্পনা সেবাদানের মাসিক প্রতিবেদন</title>
+  <style>
+    body {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin: 0;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 14px 20px;
+      font-size: 16px;
+    }
+
+    th {
+      background-color: #009688;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+
+    .highlight-table {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .highlight-table td {
+      padding: 20px 20px;
+      font-size: 18px;
+      background-color: #ffdddd;
+    }
+
+    .highlight-table td:first-child {
+      text-align: left;
+    }
+
+    .highlight-table td:last-child {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>কমিউনিটি বেইসড হেলথ কেয়ার (সিবিএইচসি)</h2>
+  <h3>মাতৃস্বাস্থ্য ও পরিবার পরিকল্পনা সেবাদানের মাসিক প্রতিবেদন</h3>
+
+  <table class="highlight-table">
+    <tr>
+      <td>মোট রোগীর সংখ্যা</td>
+      <td>28</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><th colspan="2">প্রসবপূর্ব স্বাস্থ্য সেবা</th></tr>
+    <tr><td>১ম ভিজিট</td><td>5</td></tr>
+    <tr><td>২য় ভিজিট</td><td>4</td></tr>
+    <tr><td>৩য় ভিজিট</td><td>1</td></tr>
+    <tr><td>৪+ ভিজিট</td><td>1</td></tr>
+
+    <tr><th colspan="2">ডেলিভারি সংক্রান্ত</th></tr>
+    <tr><td>মোট স্বাভাবিক প্রসব (কমিউনিটি ক্লিনিক)</td><td>–</td></tr>
+    <tr><td>জীবিত জন্ম শিশুর সংখ্যা</td><td>–</td></tr>
+    <tr><td>মৃতজন্ম শিশুর সংখ্যা</td><td>–</td></tr>
+    <tr><td>মাতৃমৃত্যু সংখ্যা</td><td>–</td></tr>
+    <tr><td>CHCP (CSBA Trained) দ্বারা প্রসব সংখ্যা</td><td>–</td></tr>
+
+    <tr><th colspan="2">প্রসবোত্তর স্বাস্থ্য সেবা</th></tr>
+    <tr><td>১ম ভিজিট</td><td>1</td></tr>
+    <tr><td>২য় ভিজিট</td><td></td></tr>
+    <tr><td>৩য় ভিজিট</td><td>–</td></tr>
+
+    <tr><th colspan="2">পুষ্টি সেবা</th></tr>
+    <tr><td>গর্ভকালীন পুষ্টি কাউন্সেলিং</td><td>11</td></tr>
+    <tr><td>গর্ভকালীন আয়রন ও ফলেট প্রদান</td><td>11</td></tr>
+    <tr><td>গর্ভোত্তর আয়রন ও ফলেট প্রদান</td><td>1</td></tr>
+
+    <tr><th colspan="2">পরিবার পরিকল্পনা ও অন্যান্য সেবা</th></tr>
+    <tr><td>কনডম</td><td>5</td></tr>
+    <tr><td>খাবার বড়ি</td><td>11</td></tr>
+    <tr><td>ইঞ্জেক্টেবলস</td><td></td></tr>
+
+    <tr><th colspan="2">রেফারকৃত রোগী</th></tr>
+    <tr><td>প্রসবপূর্ব জটিলতার কারণে</td><td>–</td></tr>
+    <tr><td>প্রসবোত্তর জটিলতার কারণে</td><td>–</td></tr>
+    <tr><td>পরিবার পরিকল্পনা সেবা গ্রহণের জন্য</td><td>–</td></tr>
+    <tr><td>পদ্ধতি ব্যবহার জনিত পার্শ-প্রতিক্রিয়া</td><td>–</td></tr>
+    <tr><td>অন্যান্য</td><td>–</td></tr>
+  </table>
+
+</body>
+</html>
+
+
