@@ -29,6 +29,8 @@
       100% { transform: translateX(-100%); }
     }
 
+   
+
     * {
       margin: 0;
       padding: 0;
@@ -48,9 +50,11 @@
       margin: 0 auto;
       padding: 0 60px;
     }
+	
 
+    /* ✅ নতুন: সার্চ বক্স সাম্প্রতিক পোষ্টের একটু উপরে ডানে */
     .top-search-bar {
-      position: fixed;
+        position: fixed;
       top: 100px;
       right: 10px;
       z-index: 1001;
@@ -184,51 +188,53 @@
       left: 0 !important;
     }
 
-    #recent-post-label {
-      position: fixed;
-      top: 25%; /* ✅ ঠিক করা হয়েছে */
-      right: 0;
-      transform: translateY(-50%);
-      width: 190px;
-      z-index: 999;
-      font-family: 'Siyam Rupali', sans-serif;
-    }
+  #recent-post-label {
+  position: fixed;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 190px;
+  z-index: 999;
+  font-family: 'Siyam Rupali', sans-serif;
+}
 
-    .recent-title {
-      background: transparent; /* ✅ ঠিক করা হয়েছে */
-      color: red;
-      padding: 8px 10px;
-      font-weight: bold;
-      font-size: 25px;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-      text-align: center;
-    }
+.recent-title {
+  background-transparent; /* ✅ নীল ব্যাকগ্রাউন্ড শুধু এই লেখায় */
+  color: red;
+  padding: 8px 10px;
+  font-weight: bold;
+  font-size: 25px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+}
 
-    .scroll-content {
-      background: transparent;
-      height: 90px;
-      overflow: hidden;
-      position: relative;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-    }
+.scroll-content {
+  background: transparent; /* ❌ নিচে যেন নীল না আসে */
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
 
-    .scroll-text {
-      position: absolute;
-      bottom: -100%;
-      width: 100%;
-      text-align: center;
-      font-size: 15px;
-      color: black;
-      animation: scroll-up 9s linear infinite;
-      background: transparent;
-    }
+.scroll-text {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  animation: scroll-up 9s linear infinite;
+  background: transparent; /* ✅ নিচে ব্যাকগ্রাউন্ড থাকবে না */
+}
 
-    @keyframes scroll-up {
-      0% { bottom: -100%; }
-      100% { bottom: 100%; }
-    }
+@keyframes scroll-up {
+  0% { bottom: -100%; }
+  100% { bottom: 100%; }
+}
+
+
 
     .container {
       background-color: #fff;
@@ -253,12 +259,14 @@
 <body>
 
   <!-- ✅ সাম্প্রতিক পোস্ট বক্স -->
-  <div id="recent-post-label">
-    <div class="recent-title">Recent post</div>
-    <div class="scroll-content">
-      <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
-    </div>
+<div id="recent-post-label">
+  <div class="recent-title">Recent post</div>
+  <div class="scroll-content">
+    <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
   </div>
+</div>
+
+
 
   <!-- ✅ মারকিউ -->
   <div id="marquee-container">
@@ -279,7 +287,7 @@
       </div>
     </header>
 
-    <!-- ✅ সার্চ বক্স -->
+    <!-- ✅ সার্চ বক্স (ছবির নিচে ডানে) -->
     <div class="top-search-bar">
       <form action="#" method="get">
         <input type="text" placeholder="অনুসন্ধান করুন...">
@@ -298,7 +306,7 @@
                 <li><a href="#">২০২৪</a>
                   <ul class="submenu">
                     <li><a href="index5.html">সাধারন রোগী ও কিশোর-কিশোরী সেবা</a></li>
-                    <li><a href="index6.html">নবজাতক ও শিশু স্বাস্থ্য সেবা</a></li>
+                    <li><a href="index6.html">নবজাতক ও শিশু  স্বাস্থ্য সেবা</a></li>
                     <li><a href="index8.html">মাতৃস্বাস্থ্য ও পরিবার পরিকল্পনা সেবা</a></li>
                   </ul>
                 </li>
@@ -341,23 +349,26 @@
       </ul>
     </nav>
 
-    <!-- ✅ মূল কনটেন্ট -->
-    <div class="container">
-      <h1>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</h1>
-      <img src="uhc-meeting-1.jpg" width="300">
-      <div class="gallery">
-        <p>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা অনুষ্ঠিত হয়েছে। বিস্তারিত পড়ুন নিচের লিংকে:</p>
-        <a href="https://1984sumon.github.io/Jangalpara-Community-Clinic/post.html" target="_blank">
-          বিস্তারিত পড়ুন
-        </a>
-      </div>
+    <!-- ✅ কনটেন্ট -->
+	<div class="container">
+   <h1>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</h1>
+  <img src="uhc-meeting-1.jpg" width="300">
+
+    <div class="gallery">
+  <p>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা অনুষ্ঠিত হয়েছে। বিস্তারিত পড়ুন নিচের লিংকে:</p>
+  <a href="https://1984sumon.github.io/Jangalpara-Community-Clinic/post.html" target="_blank" style="display:inline-block; margin-top: 10px;">বিস্তারিত পড়ুন</a>
+
+
+
+</div>
+
+      <p></p>
     </div>
 
     <!-- ✅ ফুটার -->
     <footer>
       &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
     </footer>
-
   </div>
 
   <!-- ✅ স্লাইডার JS -->
