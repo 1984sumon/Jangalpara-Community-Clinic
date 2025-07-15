@@ -11,7 +11,7 @@
       overflow: hidden;
       white-space: nowrap;
       border-bottom: 2px solid #009688;
-      padding: 8px 0;
+      padding: 3px 0;
       font-family: "Siyam Rupali", "SolaimanLipi", Arial, sans-serif;
     }
 
@@ -29,25 +29,7 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* ✅ সাম্প্রতিক পোস্ট ডান পাশে */
-    #recent-post-label {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      background-color: #00558d;
-      color: white;
-      padding: 10px 15px;
-      font-weight: bold;
-      font-size: 18px;
-      font-family: "Helvetica", "Arial", sans-serif;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-      box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-      user-select: none;
-      cursor: default;
-    }
+   
 
     * {
       margin: 0;
@@ -66,20 +48,23 @@
     .main-wrapper {
       max-width: 80%;
       margin: 0 auto;
-      padding: 0 10px;
+      padding: 0 60px;
     }
+	
 
-    /* ✅ নতুন: সার্চ বক্স স্লাইডারের নিচে ডানে */
+    /* ✅ নতুন: সার্চ বক্স সাম্প্রতিক পোষ্টের একটু উপরে ডানে */
     .top-search-bar {
-      margin-top: 10px;
-      text-align: right;
+        position: fixed;
+      top: 100px;
+      right: 10px;
+      z-index: 1001;
     }
 
     .top-search-bar input[type="text"] {
-      padding: 6px 10px;
-      width: 180px;
-      border: 1px solid #999;
-      border-radius: 4px;
+      padding: 6px 6px;
+      width: 100px;
+      border: 2px solid #999;
+      border-radius: 10px;
       font-size: 14px;
     }
 
@@ -137,7 +122,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: none;
       padding: 12px 0;
     }
 
@@ -147,16 +132,16 @@
 
     .menu li a {
       text-decoration: none;
-      color: #00558d;
+      color: blue;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
       padding: 10px 14px;
       display: block;
     }
 
     .menu li a:hover {
-      background-color: #e0e0e0;
-      border-radius: 4px;
+      background-color: black;
+      border-radius: 10px;
     }
 
     .submenu {
@@ -203,6 +188,54 @@
       left: 0 !important;
     }
 
+  #recent-post-label {
+  position: fixed;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 190px;
+  z-index: 999;
+  font-family: 'Siyam Rupali', sans-serif;
+}
+
+.recent-title {
+  background-transparent; /* ✅ নীল ব্যাকগ্রাউন্ড শুধু এই লেখায় */
+  color: red;
+  padding: 8px 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+}
+
+.scroll-content {
+  background: transparent; /* ❌ নিচে যেন নীল না আসে */
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.scroll-text {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  animation: scroll-up 9s linear infinite;
+  background: transparent; /* ✅ নিচে ব্যাকগ্রাউন্ড থাকবে না */
+}
+
+@keyframes scroll-up {
+  0% { bottom: -100%; }
+  100% { bottom: 100%; }
+}
+
+
+
     .container {
       background-color: #fff;
       padding: 20px;
@@ -225,8 +258,15 @@
 </head>
 <body>
 
-  <!-- ✅ সাম্প্রতিক পোস্ট ডান পাশে -->
-  <div id="recent-post-label">সাম্প্রতিক পোস্ট</div>
+  <!-- ✅ সাম্প্রতিক পোস্ট বক্স -->
+<div id="recent-post-label">
+  <div class="recent-title">Recent post</div>
+  <div class="scroll-content">
+    <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
+  </div>
+</div>
+
+
 
   <!-- ✅ মারকিউ -->
   <div id="marquee-container">
@@ -310,9 +350,409 @@
     </nav>
 
     <!-- ✅ কনটেন্ট -->
-    <div class="container">
-      <h2>স্বাগতম</h2>
-      <p>জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম। এখানে আমাদের সেবাসমূহ, প্রতিবেদন, ক্লিনিকের প্রোফাইল, এবং অন্যান্য তথ্য পাওয়া যাবে।</p>
+	<div class="container">
+   <h1>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</h1>
+  <img src="uhc-meeting-1.jpg" width="300">
+
+    <div class="gallery">
+  <p>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা অনুষ্ঠিত হয়েছে। বিস্তারিত পড়ুন নিচের লিংকে:</p>
+  <a href="https://1984sumon.github.io/Jangalpara-Community-Clinic/post.html" target="_blank">
+  বিস্তারিত পড়ুন
+</a>
+
+
+
+
+</div>
+
+      <p></p>
+    </div>
+
+    <!-- ✅ ফুটার -->
+    <footer>
+      &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
+    </footer>
+  </div>
+
+  <!-- ✅ স্লাইডার JS -->
+  <script>
+    const images = document.querySelectorAll('.slider img');
+    let current = 0;
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
+  <style>
+    /* ✅ মারকিউ স্টাইল */
+    #marquee-container {
+      width: 100%;
+      background-color: black;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 2px solid #009688;
+      padding: 3px 0;
+      font-family: "Siyam Rupali", "SolaimanLipi", Arial, sans-serif;
+    }
+
+    #marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 30s linear infinite;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+   
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('Capture92.PNG') repeat-y left top,
+                  url('Capture92.PNG') repeat-y right top;
+      background-size: 200px auto;
+      background-color: #e9f0f8;
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+
+    .main-wrapper {
+      max-width: 80%;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+	
+
+    /* ✅ নতুন: সার্চ বক্স সাম্প্রতিক পোষ্টের একটু উপরে ডানে */
+    .top-search-bar {
+        position: fixed;
+      top: 100px;
+      right: 10px;
+      z-index: 1001;
+    }
+
+    .top-search-bar input[type="text"] {
+      padding: 6px 6px;
+      width: 100px;
+      border: 2px solid #999;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .top-search-bar input[type="submit"] {
+      padding: 6px 10px;
+      background-color: #00558d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .top-search-bar input[type="submit"]:hover {
+      background-color: #003f6f;
+    }
+
+    header {
+      position: relative;
+      height: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slider img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 6px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: none;
+      padding: 12px 0;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 14px;
+      display: block;
+    }
+
+    .menu li a:hover {
+      background-color: black;
+      border-radius: 10px;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      min-width: 200px;
+      z-index: 10;
+    }
+
+    .menu li:hover > .submenu {
+      display: block;
+    }
+
+    .submenu li {
+      position: relative;
+    }
+
+    .submenu li .submenu {
+      top: 0;
+      left: 100%;
+    }
+
+    .submenu li:hover > .submenu {
+      display: block;
+    }
+
+    .submenu a {
+      padding: 10px 14px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .submenu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .menu > li > ul.submenu > li > ul.submenu > li > ul.submenu {
+      top: 100% !important;
+      left: 0 !important;
+    }
+
+  #recent-post-label {
+  position: fixed;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 190px;
+  z-index: 999;
+  font-family: 'Siyam Rupali', sans-serif;
+}
+
+.recent-title {
+  background-transparent; /* ✅ নীল ব্যাকগ্রাউন্ড শুধু এই লেখায় */
+  color: red;
+  padding: 8px 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+}
+
+.scroll-content {
+  background: transparent; /* ❌ নিচে যেন নীল না আসে */
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.scroll-text {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  animation: scroll-up 9s linear infinite;
+  background: transparent; /* ✅ নিচে ব্যাকগ্রাউন্ড থাকবে না */
+}
+
+@keyframes scroll-up {
+  0% { bottom: -100%; }
+  100% { bottom: 100%; }
+}
+
+
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: #ffffff;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ সাম্প্রতিক পোস্ট বক্স -->
+<div id="recent-post-label">
+  <div class="recent-title">Recent post</div>
+  <div class="scroll-content">
+    <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
+  </div>
+</div>
+
+
+
+  <!-- ✅ মারকিউ -->
+  <div id="marquee-container">
+    <div id="marquee-text">জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম</div>
+  </div>
+
+  <div class="main-wrapper">
+
+    <!-- ✅ স্লাইডার -->
+    <header>
+      <div class="slider">
+        <img src="mypic2.png" class="active" alt="Slide 1">
+        <img src="cc_meetin.png" alt="Slide 2">
+        <img src="vitamin_A_3.png" alt="Slide 3">
+        <img src="protista_barshiki.png" alt="Slide 4">
+        <img src="schoole_vaccin.png" alt="Slide 5">
+        <img src="monthly_meetin.png" alt="Slide 6">
+      </div>
+    </header>
+
+    <!-- ✅ সার্চ বক্স (ছবির নিচে ডানে) -->
+    <div class="top-search-bar">
+      <form action="#" method="get">
+        <input type="text" placeholder="অনুসন্ধান করুন...">
+        <input type="submit" value="Search">
+      </form>
+    </div>
+
+    <!-- ✅ মেনু বার -->
+    <nav>
+      <ul class="menu">
+        <li><a href="#">হোম</a></li>
+        <li><a href="#">সেবার প্রতিবেদন</a>
+          <ul class="submenu">
+            <li><a href="#">বাৎসরিক সেবা প্রতিবেদন</a>
+              <ul class="submenu">
+                <li><a href="#">২০২৪</a>
+                  <ul class="submenu">
+                    <li><a href="index5.html">সাধারন রোগী ও কিশোর-কিশোরী সেবা</a></li>
+                    <li><a href="index6.html">নবজাতক ও শিশু  স্বাস্থ্য সেবা</a></li>
+                    <li><a href="index8.html">মাতৃস্বাস্থ্য ও পরিবার পরিকল্পনা সেবা</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">মাসিক সেবা প্রতিবেদন</a>
+              <ul class="submenu">
+                <li><a href="January.html">জানুয়ারি/২৫</a></li>
+                <li><a href="February.html">ফেব্রুয়ারি/২৫</a></li>
+                <li><a href="March.html">মার্চ/২৫</a></li>
+                <li><a href="#">এপ্রিল/২৫</a></li>
+                <li><a href="#">মে/২৫</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">সিসি প্রোফাইল</a>
+          <ul class="submenu">
+            <li><a href="profile.html">প্রোফাইল</a></li>
+            <li><a href="#">সিসির ছবি</a></li>
+            <li><a href="#">সিটিজেন চার্টার</a></li>
+            <li><a href="#">সিসি লোকেশন</a></li>
+          </ul>
+        </li>
+        <li><a href="#">সিসি কমিটি</a>
+          <ul class="submenu">
+            <li><a href="#">মূল কমিটি</a></li>
+            <li><a href="#">পৃষ্ঠপোষক কমিটি</a></li>
+          </ul>
+        </li>
+        <li><a href="#">সিসি মিটিং</a></li>
+        <li><a href="#">ডাউনলোড</a></li>
+        <li><a href="#">ফটো ও ভিডিও</a>
+          <ul class="submenu">
+            <li><a href="#">সিসির ফটো গ্যালারী</a></li>
+            <li><a href="#">সিসির ভিডিও</a></li>
+          </ul>
+        </li>
+        <li><a href="#">যোগাযোগ</a></li>
+      </ul>
+    </nav>
+
+    <!-- ✅ কনটেন্ট -->
+	<div class="container">
+   <h1>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</h1>
+  <img src="uhc-meeting-1.jpg" width="300">
+
+    <div class="gallery">
+  <p>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা অনুষ্ঠিত হয়েছে। বিস্তারিত পড়ুন নিচের লিংকে:</p>
+  <a href="https://1984sumon.github.io/Jangalpara-Community-Clinic/post.html" target="_blank">
+  বিস্তারিত পড়ুন
+</a>
+
+
+
+
+</div>
+
+      <p></p>
     </div>
 
     <!-- ✅ ফুটার -->
