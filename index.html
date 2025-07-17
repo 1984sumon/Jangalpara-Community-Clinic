@@ -145,6 +145,16 @@
       display: block;
     }
 
+    .submenu li {
+      position: relative;
+    }
+
+    /* 👉 ডানে যাওয়ার জন্য */
+    .submenu li .submenu {
+      top: 0;
+      left: 100%;
+    }
+
     .submenu a {
       padding: 10px 14px;
       font-size: 15px;
@@ -224,7 +234,7 @@
 
 <!-- ✅ সাম্প্রতিক পোস্ট বক্স -->
 <div id="recent-post-label">
-  <div class="recent-title">সাম্প্রতিক পোস্ট</div>
+  <div class="recent-title">Recent post</div>
   <div class="scroll-content">
     <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
   </div>
@@ -263,7 +273,7 @@
       <li><a href="#">হোম</a></li>
       <li><a href="#">সেবার প্রতিবেদন</a>
         <ul class="submenu">
-          <li><a href="#">বাৎসরিক</a>
+          <li><a href="#">বাৎসরিক সেবা</a>
             <ul class="submenu">
               <li><a href="#">২০২৪</a>
                 <ul class="submenu">
@@ -274,7 +284,7 @@
               </li>
             </ul>
           </li>
-          <li><a href="#">মাসিক</a>
+          <li><a href="#">মাসিক সেবা</a>
             <ul class="submenu">
               <li><a href="January.html">জানুয়ারি</a></li>
               <li><a href="February.html">ফেব্রুয়ারি</a></li>
@@ -307,12 +317,7 @@
           <li><a href="#">সিসির ভিডিও</a></li>
         </ul>
       </li>
-      <li><a href="#">যোগাযোগ</a>
-        <ul class="submenu">
-          <li><a href="#">যোগাযোগ ফর্ম</a></li>
-          <li><a href="#">লোকেশন ম্যাপ</a></li>
-        </ul>
-      </li>
+      <li><a href="#">যোগাযোগ</a></li>
     </ul>
   </nav>
 
