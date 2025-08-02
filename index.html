@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: url('Capture92.PNG') repeat-y left top,
                   url('Capture92.PNG') repeat-y right top;
-      background-size: 230px auto;
+      background-size: 200px auto;
       background-color: #e9f0f8;
       font-family: "Siyam Rupali", "SolaimanLipi", sans-serif;
     }
@@ -42,64 +42,11 @@
       100% { transform: translateX(-100%); }
     }
 
-    header {
-      position: relative;
-      height: 350px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .slider {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    .slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .slider img.active {
-      opacity: 1;
-      z-index: 1;
-    }
-
-    .top-search-bar {
-      position: fixed;
-      top: 100px;
-      right: 10px;
-      z-index: 1001;
-    }
-
-    .top-search-bar input[type="text"] {
-      padding: 6px;
-      width: 150px;
-      border: 2px solid #999;
-      border-radius: 10px;
-      font-size: 14px;
-    }
-
-    .top-search-bar input[type="submit"] {
-      padding: 6px 10px;
-      background-color: #00558d;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-
     nav {
       background-color: #ffffff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       border-radius: 6px;
+      margin-top: 10px;
     }
 
     .menu {
@@ -118,7 +65,7 @@
       text-decoration: none;
       color: blue;
       font-weight: bold;
-      font-size: 22px;
+      font-size: 18px;
       padding: 10px 14px;
       display: block;
     }
@@ -149,10 +96,13 @@
       position: relative;
     }
 
-    /* 👉 ডানে যাওয়ার জন্য */
     .submenu li .submenu {
       top: 0;
       left: 100%;
+    }
+
+    .submenu li:hover > .submenu {
+      display: block;
     }
 
     .submenu a {
@@ -164,117 +114,22 @@
     .submenu a:hover {
       background-color: #f1f1f1;
     }
-
-    #recent-post-label {
-      position: fixed;
-      top: 40%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 230px;
-      z-index: 999;
-      font-family: 'Siyam Rupali', sans-serif;
-    }
-
-    .recent-title {
-      background-color: #009688;
-      color: white;
-      padding: 8px 10px;
-      font-weight: bold;
-      font-size: 20px;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-      text-align: center;
-    }
-
-    .scroll-content {
-      background: transparent;
-      height: 90px;
-      overflow: hidden;
-      position: relative;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-    }
-
-    .scroll-text {
-      position: absolute;
-      bottom: -100%;
-      width: 100%;
-      text-align: center;
-      font-size: 15px;
-      color: black;
-      animation: scroll-up 9s linear infinite;
-    }
-
-    @keyframes scroll-up {
-      0% { bottom: -100%; }
-      100% { bottom: 100%; }
-    }
-
-    .container {
-      background-color: #fff;
-      padding: 20px;
-      margin-top: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 6px;
-    }
-
-    footer {
-      background-color: #ffffff;
-      color: #333;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      border-top: 1px solid #ddd;
-      margin-top: 10px;
-      border-radius: 6px;
-    }
   </style>
 </head>
 <body>
-
-<!-- ✅ সাম্প্রতিক পোস্ট বক্স -->
-<div id="recent-post-label">
-  <div class="recent-title">Recent post</div>
-  <div class="scroll-content">
-    <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
-  </div>
-</div>
 
 <!-- ✅ মারকিউ -->
 <div id="marquee-container">
   <div id="marquee-text">জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম</div>
 </div>
 
-<div class="main-wrapper">
-
-  <!-- ✅ স্লাইডার -->
-  <header>
-    <div class="slider">
-      <img src="mypic2.png" class="active" alt="Slide 1">
-      <img src="cc_meetin.png" alt="Slide 2">
-      <img src="vitamin_A_3.png" alt="Slide 3">
-      <img src="protista_barshiki.png" alt="Slide 4">
-      <img src="schoole_vaccin.png" alt="Slide 5">
-      <img src="monthly_meetin.png" alt="Slide 6">
-    </div>
-  </header>
-
-  <!-- ✅ সার্চ বক্স -->
-  <div class="top-search-bar">
-    <form action="#" method="get">
-      <input type="text" placeholder="অনুসন্ধান করুন...">
-      <input type="submit" value="Search">
-    </form>
-  </div>
-
-  <!-- ✅ মেনু -->
-  <nav>
+<!-- ✅ মেনুবার -->
+<nav>
   <ul class="menu">
     <li><a href="#">হোম</a></li>
-
     <li><a href="#">সেবার প্রতিবেদন</a>
       <ul class="submenu">
-        <li><a href="#">বাৎসরিক</a>
+        <li><a href="#">বাৎসরিক সেবা প্রতিবেদন</a>
           <ul class="submenu">
             <li><a href="#">২০২৪</a>
               <ul class="submenu">
@@ -285,47 +140,42 @@
             </li>
           </ul>
         </li>
-        <li><a href="#">মাসিক</a>
+        <li><a href="#">মাসিক সেবা প্রতিবেদন</a>
           <ul class="submenu">
-            <li><a href="January.html">জানুয়ারি</a></li>
-            <li><a href="February.html">ফেব্রুয়ারি</a></li>
-            <li><a href="March.html">মার্চ</a></li>
+            <li><a href="January.html">জানুয়ারি/২৫</a></li>
+            <li><a href="February.html">ফেব্রুয়ারি/২৫</a></li>
+            <li><a href="March.html">মার্চ/২৫</a></li>
+            <li><a href="#">এপ্রিল/২৫</a></li>
+            <li><a href="#">মে/২৫</a></li>
           </ul>
         </li>
       </ul>
     </li>
-
-    <li><a href="profile.html">সিসি প্রোফাইল</a></li>
+    <li><a href="#">সিসি প্রোফাইল</a>
+      <ul class="submenu">
+        <li><a href="profile.html">প্রোফাইল</a></li>
+        <li><a href="#">সিসির ছবি</a></li>
+        <li><a href="#">সিটিজেন চার্টার</a></li>
+        <li><a href="#">সিসি লোকেশন</a></li>
+      </ul>
+    </li>
+    <li><a href="#">সিসি কমিটি</a>
+      <ul class="submenu">
+        <li><a href="#">মূল কমিটি</a></li>
+        <li><a href="#">পৃষ্ঠপোষক কমিটি</a></li>
+      </ul>
+    </li>
+    <li><a href="#">সিসি মিটিং</a></li>
+    <li><a href="#">ডাউনলোড</a></li>
+    <li><a href="#">ফটো ও ভিডিও</a>
+      <ul class="submenu">
+        <li><a href="#">সিসির ফটো গ্যালারী</a></li>
+        <li><a href="#">সিসির ভিডিও</a></li>
+      </ul>
+    </li>
     <li><a href="#">যোগাযোগ</a></li>
   </ul>
 </nav>
 
-
-  <!-- ✅ কনটেন্ট -->
-  <div class="container">
-    <h1>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</h1>
-    <img src="uhc-meeting-1.jpg" width="300">
-    <p>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা অনুষ্ঠিত হয়েছে।</p>
-    <a href="post.html" target="_blank">বিস্তারিত পড়ুন</a>
-  </div>
-
-  <footer>
-    &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
-  </footer>
-</div>
-
-<!-- ✅ স্লাইডার JS -->
-<script>
-  const images = document.querySelectorAll('.slider img');
-  let current = 0;
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-  }, 3000);
-</script>
-
 </body>
 </html>
-
-
