@@ -330,14 +330,7 @@
             </ul>
           </li>
           <li><a href="#">মাসিক সেবা</a>
-            <ul class="submenu">
-              <li><a href="January.html">জানুয়ারি/২৫</a></li>
-              <li><a href="February.html">ফেব্রুয়ারি/২৫</a></li>
-              <li><a href="March.html">মার্চ/২৫</a></li>
-              <li><a href="April.html">এপ্রিল/২৫</a></li>
-              <li><a href="May.html">মে/২৫</a></li>
-              <li><a href="Jun.html">জুন/২৫</a></li>
-              <li><a href="July.html">জুলাই/২৫</a></li>
+            <ul class="submenu" id="month-menu">        
             </ul>
           </li>
         </ul>
@@ -398,9 +391,43 @@
     images[current].classList.add('active');
   }, 3000);
 </script>
+<script>
+  const monthList = [
+    "জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন",
+    "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"
+  ];
+const fileLinks = [
+  "HTML/January.html",
+  "HTML/February.html",
+  "HTML/March.html",
+  "HTML/April.html",
+  "HTML/May.html",
+  "HTML/June.html",
+  "HTML/July.html",
+  "HTML/August.html",
+  "HTML/September.html",
+  "HTML/October.html",
+  "HTML/November.html",
+  "HTML/December.html"
+];
+
+  const now = new Date();
+  const currentMonth = now.getMonth(); // 0-based index
+  const menu = document.getElementById("month-menu");
+
+  for (let i = 0; i <= currentMonth; i++) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = fileLinks[i]; // আপনি চাইলে এখানে মাস অনুযায়ী আলাদা পেজ লিংক দিন
+    a.textContent = monthList[i] + "/২৫";
+    li.appendChild(a);
+    menu.appendChild(li);
+  }
+</script>
 
 </body>
 </html>
+
 
 
 
