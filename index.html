@@ -209,7 +209,12 @@
       0% { bottom: -100%; }
       100% { bottom: 100%; }
     }
-
+  .scroll-text div {
+      padding: 5px 10px;
+      font-weight: bold;
+      color: #d00; /* টেক্সট লাল */
+	  border-bottom: 1px solid #999;
+    
     /* পোস্ট কন্টেইনার */
     .post-container {
       max-width: 1200px;
@@ -281,9 +286,12 @@
 <div id="recent-post-label">
   <div class="recent-title">Recent post</div>
   <div class="scroll-content">
-    <div class="scroll-text">জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
+    <div class="scroll-text">
+    <div> 👉 জুন/২৫ মাসের সিএইচসিপিদের<br> মাসিক সমন্বয় সভা</div>
+   <div> 👉 টাইফয়েড টিকাদান কর্মসূচি শুরু হবে ১২ অক্টোবর</div>
   </div>
 </div>
+  </div>
 
 <!-- ✅ মারকিউ -->
 <div id="marquee-container">
@@ -433,6 +441,7 @@ const fileLinks = [
 
 </body>
 </html>
+
 
 
 
