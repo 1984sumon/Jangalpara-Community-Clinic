@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -166,69 +167,98 @@
     }
 
     #recent-post-label {
-      position: fixed;
-      top: 40%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 220px;
-      z-index: 999;
-      font-family: 'Siyam Rupali', sans-serif;
-    }
+  position: fixed;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 220px;
+  z-index: 999;
+  font-family: 'Siyam Rupali', sans-serif;
+}
 
-    .recent-title {
-      background-color: #009688;
-      color: white;
-      padding: 8px 10px;
-      font-weight: bold;
-      font-size: 20px;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-      text-align: center;
-    }
+.recent-title {
+  background-color: #009688;
+  color: white;
+  padding: 8px 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+}
 
-    .scroll-content {
-      background: transparent;
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-    }
+.scroll-content {
+  background: transparent;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
 
-    .scroll-text {
-      position: absolute;
-      bottom: -100%;
-      width: 100%;
-      text-align: center;
-      font-size: 18px;
-      color: black;
-      animation: scroll-up 20s linear infinite;
-    }
-	/* মাউস রাখলে থেমে যাবে */
-    .scroll-text:hover {
-      animation-play-state: paused;
-    }
+.scroll-text {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  animation: scroll-up 20s linear infinite;
+}
+/* মাউস রাখলে থেমে যাবে */
+.scroll-text:hover {
+  animation-play-state: paused;
+}
 
+@keyframes scroll-up {
+  0% { bottom: -100%; }
+  100% { bottom: 100%; }
+}
 
-    @keyframes scroll-up {
-      0% { bottom: -100%; }
-      100% { bottom: 100%; }
-    }
-	 .scroll-text div {
-      padding: 5px 10px;
-      font-weight: bold;
-      color: black; /* টেক্সট লাল */
-	  border-bottom: 1px solid #999;
-    }
-/* লিংকের স্টাইল */
-.scroll-text a { 
+.scroll-text div {
+  padding: 5px 10px;
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid #999;
+}
+
+/* লিংকের জন্য */
+.scroll-text a {
   text-decoration: none;   /* আন্ডারলাইন তুলে দেবে */
-  color: black;             /* চাইলে রঙ আলাদা করতে পারেন */
+  color: blue;             /* লিংকের রঙ */
 }
 .scroll-text a:hover {
-  color: red;              /* মাউস রাখলে রঙ পাল্টাবে */
-  text-decoration: none; /* চাইলে আবার আন্ডারলাইন দিতে পারেন */
+  color: red;              /* মাউস নিলে লাল হবে */
+  text-decoration: underline; /* underline হবে */
+  cursor: pointer;         /* মাউস নিয়ে গেলে হাতের আইকন */
 }
+
+/* Responsive - মোবাইল */
+@media (max-width: 768px) {
+  #recent-post-label {
+    width: 180px;
+    font-size: 14px;
+  }
+  .recent-title {
+    font-size: 16px;
+  }
+  .scroll-text {
+    font-size: 14px;
+  }
+}
+
+/* Responsive - ট্যাব */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #recent-post-label {
+    width: 200px;
+    font-size: 16px;
+  }
+  .recent-title {
+    font-size: 18px;
+  }
+  .scroll-text {
+    font-size: 16px;
+  }
+}
+
     /* পোস্ট কন্টেইনার */
     .post-container {
       max-width: 1200px;
