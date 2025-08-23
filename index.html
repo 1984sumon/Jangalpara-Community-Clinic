@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>জাঙ্গালপাড়া কমিউনিটি ক্লিনিক</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,9 +17,10 @@
     .main-wrapper {
       max-width: 80%;
       margin: 0 auto;
-      padding: 0 60px;
+      padding: 0 15px;
     }
 
+    /* 🔹 Marquee */
     #marquee-container {
       width: 100%;
       background-color: black;
@@ -28,34 +29,31 @@
       border-bottom: 2px solid #009688;
       padding: 3px 0;
     }
-
     #marquee-text {
       display: inline-block;
       padding-left: 100%;
       animation: marquee 30s linear infinite;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
       color: white;
     }
-
     @keyframes marquee {
       0% { transform: translateX(0%); }
       100% { transform: translateX(-100%); }
     }
 
+    /* 🔹 Header Slider */
     header {
       position: relative;
-      height: 350px;
+      height: 300px;
       border-radius: 8px;
       overflow: hidden;
     }
-
     .slider {
       width: 100%;
       height: 100%;
       position: relative;
     }
-
     .slider img {
       width: 100%;
       height: 100%;
@@ -66,19 +64,15 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
+    .slider img.active { opacity: 1; z-index: 1; }
 
-    .slider img.active {
-      opacity: 1;
-      z-index: 1;
-    }
-
+    /* 🔹 Search Box */
     .top-search-bar {
       position: fixed;
       top: 100px;
       right: 10px;
       z-index: 1001;
     }
-
     .top-search-bar input[type="text"] {
       padding: 6px;
       width: 130px;
@@ -86,7 +80,6 @@
       border-radius: 10px;
       font-size: 14px;
     }
-
     .top-search-bar input[type="submit"] {
       padding: 6px 10px;
       background-color: #00558d;
@@ -97,12 +90,13 @@
       cursor: pointer;
     }
 
+    /* 🔹 Menu */
     nav {
       background-color: #ffffff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       border-radius: 6px;
+      margin-top: 10px;
     }
-
     .menu {
       list-style: none;
       display: flex;
@@ -110,26 +104,20 @@
       flex-wrap: wrap;
       padding: 12px 0;
     }
-
-    .menu li {
-      position: relative;
-    }
-
+    .menu li { position: relative; }
     .menu li a {
       text-decoration: none;
       color: blue;
       font-weight: bold;
-      font-size: 22px;
-      padding: 10px 14px;
+      font-size: 18px;
+      padding: 8px 12px;
       display: block;
     }
-
     .menu li a:hover {
       background-color: black;
       color: white;
-      border-radius: 10px;
+      border-radius: 6px;
     }
-
     .submenu {
       display: none;
       position: absolute;
@@ -141,221 +129,163 @@
       min-width: 200px;
       z-index: 10;
     }
+    .menu li:hover > .submenu { display: block; }
+    .submenu li { position: relative; }
+    .submenu li .submenu { top: 0; left: 100%; }
+    .submenu a { padding: 10px 14px; font-size: 15px; color: #333; }
+    .submenu a:hover { background-color: #f1f1f1; }
 
-    .menu li:hover > .submenu {
-      display: block;
+    /* 🔹 Recent Post */
+    #recent-post-label {
+      position: fixed;
+      top: 40%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 220px;
+      z-index: 999;
+      font-family: 'Siyam Rupali', sans-serif;
     }
-
-    .submenu li {
+    .recent-title {
+      background-color: #009688;
+      color: white;
+      padding: 8px 10px;
+      font-weight: bold;
+      font-size: 18px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      text-align: center;
+    }
+    .scroll-content {
+      background: transparent;
+      height: 200px;
+      overflow: hidden;
       position: relative;
     }
-
-    /* 👉 ডানে যাওয়ার জন্য */
-    .submenu li .submenu {
-      top: 0;
-      left: 100%;
+    .scroll-text {
+      position: absolute;
+      bottom: -100%;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      color: black;
+      animation: scroll-up 20s linear infinite;
+    }
+    .scroll-text:hover { animation-play-state: paused; }
+    @keyframes scroll-up {
+      0% { bottom: -100%; }
+      100% { bottom: 100%; }
+    }
+    .scroll-text div {
+      padding: 5px 10px;
+      font-weight: bold;
+      color: black;
+      border-bottom: 1px solid #999;
+    }
+    .scroll-text a {
+      text-decoration: none;
+      color: blue;
+    }
+    .scroll-text a:hover {
+      color: red;
+      text-decoration: underline;
+      cursor: pointer;
     }
 
-    .submenu a {
-      padding: 10px 14px;
-      font-size: 15px;
-      color: #333;
-    }
-
-    .submenu a:hover {
-      background-color: #f1f1f1;
-    }
-
-    #recent-post-label {
-  position:  fixed;
-  top: 40%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 220px;
-  z-index: 999;
-  font-family: 'Siyam Rupali', sans-serif;
-}
-
-.recent-title {
-  background-color: #009688;
-  color: white;
-  padding: 8px 10px;
-  font-weight: bold;
-  font-size: 20px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  text-align: center;
-}
-
-.scroll-content {
-  background: transparent;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-}
-
-.scroll-text {
-  position: absolute;
-  bottom: -100%;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  color: black;
-  animation: scroll-up 20s linear infinite;
-}
-/* মাউস রাখলে থেমে যাবে */
-.scroll-text:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-up {
-  0% { bottom: -100%; }
-  100% { bottom: 100%; }
-}
-
-.scroll-text div {
-  padding: 5px 10px;
-  font-weight: bold;
-  color: black;
-  border-bottom: 1px solid #999;
-}
-
-/* লিংকের জন্য */
-.scroll-text a {
-  text-decoration: none;   /* আন্ডারলাইন তুলে দেবে */
-  color: blue;             /* লিংকের রঙ */
-}
-.scroll-text a:hover {
-  color: red;              /* মাউস নিলে লাল হবে */
-  text-decoration: underline; /* underline হবে */
-  cursor: pointer;         /* মাউস নিয়ে গেলে হাতের আইকন */
-}
-
-/* Responsive - মোবাইল */
-/* মোবাইলে Recent Post নিচে দেখাবে */
-@media (max-width: 768px) {
-  #recent-post-label {
-    position: static;   /* ফিক্সড থাকবে না */
-    width: 100%;        /* পুরো চওড়া হবে */
-    margin: 15px 0;     /* ফাঁকা জায়গা */
-    transform: none;    /* translate বাদ */
-  }
-
-  .recent-title {
-    border-radius: 0;   /* মোবাইলে কোণা সোজা হবে */
-    text-align: center; /* শিরোনাম মাঝখানে */
-  }
-
-  .scroll-content {
-    height: 120px;      /* ছোট height */
-  }
-}
-
-  .scroll-text {
-    font-size: 14px;
-  }
-}
-
-/* Responsive - ট্যাব */
-@media (min-width: 769px) and (max-width: 1024px) {
-  #recent-post-label {
-    width: 200px;
-    font-size: 16px;
-  }
-  .recent-title {
-    font-size: 18px;
-  }
-  .scroll-text {
-    font-size: 16px;
-  }
-}
-
-    /* পোস্ট কন্টেইনার */
+    /* 🔹 Post */
     .post-container {
       max-width: 1200px;
-      margin: 0 auto 40px;
-      padding: 0 15px;
+      margin: 20px auto;
+      padding: 0 10px;
       display: flex;
       flex-wrap: wrap;
-      gap: 2px;
+      gap: 15px;
       justify-content: space-between;
     }
     .post {
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 49%;
-      padding: 30px;
-      box-sizing: border-box;
+      width: 48%;
+      padding: 20px;
       transition: transform 0.3s ease;
     }
-    .post:hover {
-      transform: translateY(-5px);
-    }
-    .post img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .post h2 {
-      font-size: 20px;
-      color: #00558d;
-      margin-bottom: 8px;
-    }
-    .post p {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.6;
-    }
+    .post:hover { transform: translateY(-5px); }
+    .post img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+    .post h1 { font-size: 18px; color: #00558d; margin-bottom: 8px; }
+    .post p { font-size: 14px; color: #333; line-height: 1.6; }
     .read-more {
       margin-top: 10px;
       display: inline-block;
       background-color: #007acc;
       color: white;
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
       font-size: 14px;
     }
-    .read-more:hover {
-      background-color: #005fa3;
-    }
+    .read-more:hover { background-color: #005fa3; }
 
+    /* 🔹 Footer */
     footer {
       background-color: #ffffff;
       color: #333;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       font-size: 14px;
       border-top: 1px solid #ddd;
       margin-top: 10px;
       border-radius: 6px;
     }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .main-wrapper { max-width: 100%; padding: 0 10px; }
+      header { height: 200px; }
+      #marquee-text { font-size: 14px; }
+      .menu li a { font-size: 14px; padding: 6px 10px; }
+      .post-container { flex-direction: column; }
+      .post { width: 100%; }
+      #recent-post-label {
+        position: static;
+        width: 100%;
+        margin: 10px 0;
+        transform: none;
+      }
+      .recent-title { border-radius: 0; font-size: 16px; }
+      .scroll-content { height: 120px; }
+    }
+
+    /* ট্যাব */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .main-wrapper { max-width: 95%; }
+      .post { width: 48%; }
+      #recent-post-label { width: 200px; font-size: 16px; }
+      .recent-title { font-size: 16px; }
+      .scroll-text { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
 
-<!-- ✅ সাম্প্রতিক পোস্ট বক্স -->
+<!-- ✅ Recent Post -->
 <div id="recent-post-label">
   <div class="recent-title">Recent post</div>
   <div class="scroll-content">
     <div class="scroll-text">
-	<div><a href="post.html"> 👉 জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</a></div>
-	<div><a href="Typhoid Vaccine.html">👉 টাইফয়েড টিকাদান কর্মসূচি শুরু হবে ১২ অক্টোবর</a></div>
+      <div><a href="post.html"> 👉 জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</a></div>
+      <div><a href="Typhoid Vaccine.html">👉 টাইফয়েড টিকাদান কর্মসূচি শুরু হবে ১২ অক্টোবর</a></div>
+    </div>
   </div>
 </div>
-</div>
 
-<!-- ✅ মারকিউ -->
+<!-- ✅ Marquee -->
 <div id="marquee-container">
   <div id="marquee-text">জাঙ্গালপাড়া কমিউনিটি ক্লিনিকের অফিসিয়াল ওয়েবসাইটে স্বাগতম</div>
 </div>
 
 <div class="main-wrapper">
 
-  <!-- ✅ স্লাইডার -->
+  <!-- ✅ Slider -->
   <header>
     <div class="slider">
       <img src="mypic2.png" class="active" alt="Slide 1">
@@ -367,7 +297,7 @@
     </div>
   </header>
 
-  <!-- ✅ সার্চ বক্স -->
+  <!-- ✅ Search -->
   <div class="top-search-bar">
     <form action="#" method="get">
       <input type="text" placeholder="অনুসন্ধান করুন...">
@@ -375,7 +305,7 @@
     </form>
   </div>
 
-  <!-- ✅ মেনু -->
+  <!-- ✅ Menu -->
   <nav>
     <ul class="menu">
       <li><a href="#">হোম</a></li>
@@ -393,8 +323,7 @@
             </ul>
           </li>
           <li><a href="#">মাসিক সেবা</a>
-            <ul class="submenu" id="month-menu">        
-            </ul>
+            <ul class="submenu" id="month-menu"></ul>
           </li>
         </ul>
       </li>
@@ -406,27 +335,17 @@
           <li><a href="#">সিসি লোকেশন</a></li>
         </ul>
       </li>
-      <li><a href="#">সিসি কমিটি</a>
-        <ul class="submenu">
-          <li><a href="#">মূল কমিটি</a></li>
-          <li><a href="#">পৃষ্ঠপোষক কমিটি</a></li>
-        </ul>
-      </li>
+      <li><a href="#">সিসি কমিটি</a></li>
       <li><a href="#">সিসি মিটিং</a></li>
       <li><a href="#">ডাউনলোড</a></li>
-      <li><a href="#">ফটো ও ভিডিও</a>
-        <ul class="submenu">
-          <li><a href="#">সিসির ফটো গ্যালারী</a></li>
-          <li><a href="#">সিসির ভিডিও</a></li>
-        </ul>
-      </li>
+      <li><a href="#">ফটো ও ভিডিও</a></li>
       <li><a href="#">যোগাযোগ</a></li>
     </ul>
   </nav>
 
+  <!-- ✅ Post -->
   <div class="post-container">
     <div class="post">
-      
       <h1>জুন/২৫ মাসের সিএইচসিপিদের মাসিক সমন্বয় সভা</h1>
       <img src="uhc-meeting-1.png" alt="সভা">
       <p><strong>তারিখ ও স্থানঃ</strong> ১২ জুলাই ২০২৫, কাহালু উপজেলা স্বাস্থ্য কমপ্লেক্সে স্বাস্থ্য কর্মকর্তার উপস্থিতিতে উক্ত সভা অনুষ্ঠিত হয়।</p>
@@ -435,22 +354,18 @@
     <div class="post">
       <h1>টাইফয়েড টিকাদান কর্মসূচি ১ সেপ্টেম্বর নয়, শুরু হবে ১২ অক্টোবর</h1>
       <img src="typhoid-1.png" alt="সভা">
-      <p>বহুল প্রতীক্ষিত টাইফয়েড টিকাদান কর্মসূচি নির্ধারিত সময়ের এক মাস পর শুরু হচ্ছে। স্বাস্থ্য অধিদপ্তর জানিয়েছে, আগামী ১২ অক্টোবর থেকে সারাদেশে এই টিকাদান কার্যক্রম চালু হবে।
-
-এর আগে ১ সেপ্টেম্বর থেকে কর্মসূচি শুরু হওয়ার কথা থাকলেও মাঠ পর্যায়ের প্রস্তুতি ঘাটতি ও দুর্গাপূজার ছুটির কারণে তা পেছানো হয়েছে।
-
-স্বাস্থ্য অধিদপ্তরের অতিরিক্ত মহাপরিচালক (প্রশাসন) অধ্যাপক তাহমিদ শামসুজ্জামান সাংবাদিকদের জানান, “প্রথম ১০ দিন দেশের বিভিন্ন স্কুল ও মাদ্রাসায় ক্যাম্পের মাধ্যমে শিশু-কিশোরদের টিকা দেওয়া হবে। পরবর্তী ৮ দিন ইউনিয়ন পর্যায়ের স্থায়ী টিকাদান কেন্দ্রগুলোতে এই কার্যক্রম চলবে।”
-.....</p>
-       <a href="Typhoid Vaccine.html" target="_blank" class="read-more">বিস্তারিত পড়ুন</a>
+      <p>বহুল প্রতীক্ষিত টাইফয়েড টিকাদান কর্মসূচি নির্ধারিত সময়ের এক মাস পর শুরু হচ্ছে। স্বাস্থ্য অধিদপ্তর জানিয়েছে, আগামী ১২ অক্টোবর থেকে সারাদেশে এই টিকাদান কার্যক্রম চালু হবে।</p>
+      <a href="Typhoid Vaccine.html" target="_blank" class="read-more">বিস্তারিত পড়ুন</a>
     </div>
   </div>
 
+  <!-- ✅ Footer -->
   <footer>
     &copy; ২০২৫ জাঙ্গালপাড়া কমিউনিটি ক্লিনিক | সর্বস্বত্ব সংরক্ষিত
   </footer>
 </div>
 
-<!-- ✅ স্লাইডার JS -->
+<!-- ✅ Slider JS -->
 <script>
   const images = document.querySelectorAll('.slider img');
   let current = 0;
@@ -460,34 +375,23 @@
     images[current].classList.add('active');
   }, 3000);
 </script>
+
 <script>
   const monthList = [
-    "জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন",
-    "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"
+    "জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন",
+    "জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"
   ];
-const fileLinks = [
-  "January.html",
-  "February.html",
-  "March.html",
-  "April.html",
-  "May.html",
-  "June.html",
-  "July.html",
-  "August.html",
-  "September.html",
-  "October.html",
-  "November.html",
-  "December.html"
-];
-
+  const fileLinks = [
+    "January.html","February.html","March.html","April.html","May.html","June.html",
+    "July.html","August.html","September.html","October.html","November.html","December.html"
+  ];
   const now = new Date();
-  const currentMonth = now.getMonth(); // 0-based index
+  const currentMonth = now.getMonth();
   const menu = document.getElementById("month-menu");
-
   for (let i = 0; i <= currentMonth; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = fileLinks[i]; // আপনি চাইলে এখানে মাস অনুযায়ী আলাদা পেজ লিংক দিন
+    a.href = fileLinks[i];
     a.textContent = monthList[i] + "/২৫";
     li.appendChild(a);
     menu.appendChild(li);
@@ -496,63 +400,3 @@ const fileLinks = [
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
