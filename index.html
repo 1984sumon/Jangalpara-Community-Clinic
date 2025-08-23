@@ -232,14 +232,25 @@
 }
 
 /* Responsive - মোবাইল */
+/* মোবাইলে Recent Post নিচে দেখাবে */
 @media (max-width: 768px) {
   #recent-post-label {
-    width: 180px;
-    font-size: 14px;
+    position: static;   /* ফিক্সড থাকবে না */
+    width: 100%;        /* পুরো চওড়া হবে */
+    margin: 15px 0;     /* ফাঁকা জায়গা */
+    transform: none;    /* translate বাদ */
   }
+
   .recent-title {
-    font-size: 16px;
+    border-radius: 0;   /* মোবাইলে কোণা সোজা হবে */
+    text-align: center; /* শিরোনাম মাঝখানে */
   }
+
+  .scroll-content {
+    height: 120px;      /* ছোট height */
+  }
+}
+
   .scroll-text {
     font-size: 14px;
   }
@@ -485,6 +496,7 @@ const fileLinks = [
 
 </body>
 </html>
+
 
 
 
